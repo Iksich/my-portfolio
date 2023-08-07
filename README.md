@@ -4,7 +4,7 @@ Welcome to my portfolio website! This website showcases a collection of my proje
 
 ## Live Preview
 
-Check out my portfolio: [Live Preview](https://<Iksich>.github.io/my-portfolio)
+Check out my portfolio: [Live Preview](https://Iksich.github.io/my-portfolio/)
 
 ## About
 
@@ -18,13 +18,13 @@ This portfolio website is built using HTML, CSS, and JavaScript to highlight my 
 
 ## Usage
 
-1. Visit [Live Preview](https://your-portfolio-url.com) to explore my portfolio.
+1. Visit [Live Preview](https://Iksich.github.io/my-portfolio/) to explore my portfolio.
 2. Navigate through different sections to learn about my projects and skills.
 3. Feel free to contact me if you have any questions or opportunities.
 
 ## Contact
 
-You can reach me at [your.email@example.com](mailto:your.email@example.com). Connect with me on [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile) for professional networking.
+You can reach me at [ilija.pejanovicc@gmail.com](mailto:ilija.pejanovicc@gmail.com). Connect with me on [LinkedIn](https://www.linkedin.com/in/ilija-pejanovic-4a3683243/) for professional networking.
 
 Thank you for visiting my portfolio website!
 
