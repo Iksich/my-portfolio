@@ -134,28 +134,24 @@ const projects = [
   {
     title: "Portfolio website",
     imgSrc: "/project-imgs/portfolio.png",
-    code: "",
-    projectLink: "",
+    code: "https://github.com/Iksich/my-portfolio",
+    projectLink: "https://my-portfolio-iksich.vercel.app/",
     tech: ["TypeScript", "SCSS", "EmailJs", "Framer-Motion", "React"],
     description:
-      "In my recent project, I designed and developed the Fetch Movies app, a dynamic application that allows users to search for movies and add them to a personalized movie list. The app utilizes React, TypeScript, and an external movie API to provide a seamless user experience while fetching and displaying movie data in real-time.",
+      "This portfolio website showcases a collection of my projects and skills as a developer. Built using React, TypeScript, and SCSS, it provides an interactive way for recruiters and potential employers to explore my work and expertise.",
     modalContent: (
       <>
         <p>
-          Movie Search: The app connects to an external movie API (OMDb) to fetch movie data based on user-entered search queries. I optimized API requests to ensure fast and efficient data retrieval.
+          This portfolio website is designed to present my programming projects and showcase my capabilities as a developer. It offers an engaging and user-friendly experience, allowing visitors to navigate through different sections to learn more about my work.
         </p>
         <p>
-          I implemented a dynamic list of movies that updates in real-time as users search for different movies. This approach provided an interactive and engaging user experience.
+          The website is built using React to create a dynamic and responsive user interface. TypeScript is used to enhance the development process by providing type safety and improved code readability.
         </p>
         <p>
-          Special attention was given to error handling during data fetching. When a movie is not found, the app displays an appropriate error message, ensuring a user-friendly experience.
+          Visitors can explore the various projects I've worked on, view project details, and access GitHub repositories or live demos. Additionally, the website provides information about the programming languages, frameworks, and tools I'm proficient in.
         </p>
         <p>
-          Users can add their favorite movies to a personalized movie list. This feature allowed users to manage their movie collections efficiently.
-        </p>
-
-        <p>
-          A movie preview section was integrated into the app, displaying essential details like the movie title, description, poster image, and a link to the IMDb page. This preview offered users a glimpse of the movie before adding it to their list.
+          I'm excited to share my work and connect with others in the tech community through this portfolio website. Thank you for visiting!
         </p>
       </>
     ),
