@@ -1,2 +1,33 @@
-# my-portfolio
-Portfolio website that showcases my skills
+# Ilija Pejanovic Portfolio
+
+Welcome to my portfolio website! This website showcases a collection of my projects and skills as a developer.
+
+## Live Preview
+
+Check out my portfolio: [Live Preview](https://<Iksich>.github.io/my-portfolio)
+
+## About
+
+This portfolio website is built using HTML, CSS, and JavaScript to highlight my programming projects and expertise. It provides an interactive way for recruiters and potential employers to learn more about me and the work I've done.
+
+## Features
+
+- **Projects:** Browse through my projects with descriptions, images, and links to GitHub repositories or live demos.
+- **Skills:** Discover the programming languages, frameworks, and tools I'm proficient in.
+- **Contact:** Reach out to me through the provided contact information.
+
+## Usage
+
+1. Visit [Live Preview](https://your-portfolio-url.com) to explore my portfolio.
+2. Navigate through different sections to learn about my projects and skills.
+3. Feel free to contact me if you have any questions or opportunities.
+
+## Contact
+
+You can reach me at [your.email@example.com](mailto:your.email@example.com). Connect with me on [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile) for professional networking.
+
+Thank you for visiting my portfolio website!
+
+---
+
+_Designed and developed by Ilija Pejanovic_
