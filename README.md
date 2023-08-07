@@ -4,7 +4,7 @@ Welcome to my portfolio website! This website showcases a collection of my proje
 
 ## Live Preview
 
-Check out my portfolio: [Live Preview](https://Iksich.github.io/my-portfolio/)
+Check out my portfolio: [Live Preview](https://Iksich.github.io/)
 
 ## About
 
@@ -18,7 +18,7 @@ This portfolio website is built using HTML, CSS, and JavaScript to highlight my 
 
 ## Usage
 
-1. Visit [Live Preview](https://Iksich.github.io/my-portfolio/) to explore my portfolio.
+1. Visit [Live Preview](https://Iksich.github.io/) to explore my portfolio.
 2. Navigate through different sections to learn about my projects and skills.
 3. Feel free to contact me if you have any questions or opportunities.
 
