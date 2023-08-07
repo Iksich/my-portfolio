@@ -104,32 +104,32 @@ const projects = [
   {
     title: "Carousel",
     imgSrc: "/project-imgs/carousel.png",
-    code: "https://github.com/mate-academy/react_dynamic-list-of-posts/pull/861/files",
-    projectLink: "https://iksich.github.io/react_dynamic-list-of-posts/",
+    code: "https://github.com/mate-academy/react_carousel/pull/372",
+    projectLink: "https://iksich.github.io/react_carousel/",
     tech: ["TypeScript", "SCSS", "React"],
     description:
-      "In my recent project, I designed and developed the Fetch Movies app, a dynamic application that allows users to search for movies and add them to a personalized movie list. The app utilizes React, TypeScript, and an external movie API to provide a seamless user experience while fetching and displaying movie data in real-time.",
+        "I designed and developed a dynamic Carousel component using React, enabling users to display and navigate through a collection of images. Users can customize item width, frame size, and scroll step. The component includes smooth animations, responsive navigation, and an optional cyclic scrolling feature for seamless looping.",
     modalContent: (
       <>
         <p>
-          Movie Search: The app connects to an external movie API (OMDb) to fetch movie data based on user-entered search queries. I optimized API requests to ensure fast and efficient data retrieval.
+          Interactive Image Display: The Carousel component enables users to present a set of images in an engaging way. Users can navigate through the images using intuitive previous and next buttons.
         </p>
         <p>
-          I implemented a dynamic list of movies that updates in real-time as users search for different movies. This approach provided an interactive and engaging user experience.
+          Customization Options: I designed the Carousel to be highly customizable. Users can adjust the width of each displayed item, control the number of items shown simultaneously in the frame, and determine the number of items scrolled per interaction.
         </p>
         <p>
-          Special attention was given to error handling during data fetching. When a movie is not found, the app displays an appropriate error message, ensuring a user-friendly experience.
+          Smooth Animations: To enhance user experience, I incorporated smooth slide animations during navigation. The animation duration can also be customized to achieve the desired visual effect.
         </p>
         <p>
-          Users can add their favorite movies to a personalized movie list. This feature allowed users to manage their movie collections efficiently.
+          Infinite Looping: For added flexibility, I implemented an option for cyclic scrolling. This means that when reaching the end of the images, the Carousel seamlessly continues from the beginning, creating an infinite loop.
         </p>
-
         <p>
-          A movie preview section was integrated into the app, displaying essential details like the movie title, description, poster image, and a link to the IMDb page. This preview offered users a glimpse of the movie before adding it to their list.
+          Responsive Design: The Carousel component is designed to be responsive, adapting to different screen sizes while maintaining a coherent and visually appealing layout.
         </p>
       </>
     ),
   },
+
 
   {
     title: "Portfolio website",
