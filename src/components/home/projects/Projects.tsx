@@ -74,8 +74,8 @@ const projects = [
   {
     title: "Fetch movies",
     imgSrc: "/project-imgs/fetch_movies.png",
-    code: "https://github.com/mate-academy/react_dynamic-list-of-posts/pull/861/files",
-    projectLink: "https://iksich.github.io/react_dynamic-list-of-posts/",
+    code: "https://github.com/mate-academy/react_movies-list-fetch-movies/pull/975",
+    projectLink: "https://iksich.github.io/react_movies-list-fetch-movies/",
     tech: ["TypeScript", "SCSS", "React"],
     description:
       "In my recent project, I designed and developed the Fetch Movies app, a dynamic application that allows users to search for movies and add them to a personalized movie list. The app utilizes React, TypeScript, and an external movie API to provide a seamless user experience while fetching and displaying movie data in real-time.",
