@@ -2,17 +2,10 @@ import styles from "./heading.module.scss";
 import { MyLinks } from "./components/MyLinks";
 import { useState, useEffect, useRef } from "react";
 import { AiOutlineClose } from "react-icons/ai"
-import {RiMenuUnfoldLine} from "react-icons/ri"
+import { RiMenuUnfoldLine } from "react-icons/ri"
 
 export const Heading = () => {
   const [openMobile, setOpenMobile] = useState(false);
-  const [selected, setSelected] = useState("");
-  const handleMobileViewOpen = () => {
-    setOpenMobile(true);
-  };
-  const handleMobileViewClose = () => {
-    setOpenMobile(false);
-  };
   const toggleref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,6 +20,14 @@ export const Heading = () => {
     };
   }, [toggleref]);
 
+  const handleMobileViewOpen = () => {
+    setOpenMobile(true);
+  };
+
+  const handleMobileViewClose = () => {
+    setOpenMobile(false);
+  };
+
   return (
     <header className={styles.heading}>
       <MyLinks />
@@ -34,45 +35,23 @@ export const Heading = () => {
         {openMobile ? (
           <AiOutlineClose onClick={handleMobileViewClose} />
         ) : (
-            <RiMenuUnfoldLine onClick={handleMobileViewOpen}/>
-        )
-        }
+          <RiMenuUnfoldLine onClick={handleMobileViewOpen} />
+        )}
         <div
-          className={
-            openMobile
-              ? styles.navbarMobileOpenActive
-              : styles.navbarMobileOpen
-          }
+          className={`${styles.navbarMobileOpen} ${
+            openMobile ? styles.navbarMobileOpenActive : ""
+          }`}
           onClick={handleMobileViewClose}
           ref={toggleref}
         >
           <nav>
-            <a
-              href="#"
-              onClick={() => {
-                setSelected("");
-              }}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              onClick={() => {
-                setSelected("about");
-              }}
-            >
-              About
-            </a>
-            <a href="#projects" onClick={() => setSelected("projects")}>Projects</a>
-            <a
-              href="#contact"
-              onClick={() => setSelected("contact")}
-            >
-              Contact
-            </a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
           </nav>
         </div>
-      </div >
-    </header >
+      </div>
+    </header>
   );
 };
