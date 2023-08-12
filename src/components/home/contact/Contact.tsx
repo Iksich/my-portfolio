@@ -1,49 +1,42 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef, ChangeEvent, FormEvent } from "react";
 import { Reveal } from "../../utils/Reveal";
 import styles from "./contact.module.scss";
 import { AiFillMail } from "react-icons/ai";
 import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast, ToastOptions } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { OutlineButton } from "../../buttons/OutlineButton";
 
-export const Contact = () => {
-  const [message, setMessage] = useState('');
+export const Contact: React.FC = () => {
+  const [message, setMessage] = useState<string>('');
   const form = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_8guehy6', 'template_r6u1a4v', form.current!, 'HOVEDFq5g8I7E-j3n')
-      .then((_result) => {
-        toast.success('Message sent!', {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        });
-        setMessage('');
-        form.current!.reset();
-      }, (_error) => {
-        toast.error('Something went wrong', {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        });
-      });
+    try {
+      await emailjs.sendForm('service_8guehy6', 'template_r6u1a4v', form.current!, 'HOVEDFq5g8I7E-j3n');
+      toast.success('Message sent!', toastOptions);
+      setMessage('');
+      form.current!.reset();
+    } catch (error) {
+      toast.error('Something went wrong', toastOptions);
+    }
   };
 
-  const handleMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value);
+  };
+
+  const toastOptions: ToastOptions = {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
   };
 
   return (
@@ -62,12 +55,12 @@ export const Contact = () => {
               <a
                 href="https://www.instagram.com/_ilija_p/"
                 target="_blank"
-                rel="nofollow"
+                rel="noopener noreferrer"
               >
                 Instagram
               </a>{" "}
               or{" "}
-              <a href="https://www.linkedin.com/in/ilija-pejanovic-4a3683243/" target="_blank" rel="nofollow">
+              <a href="https://www.linkedin.com/in/ilija-pejanovic-4a3683243/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>{" "}
               if that&apos;s more your speed.
@@ -105,3 +98,5 @@ export const Contact = () => {
     </>
   );
 };
+
+
