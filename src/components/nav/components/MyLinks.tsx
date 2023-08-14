@@ -1,14 +1,28 @@
-import React from "react";
-import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
-import { BsTelegram, BsDiscord } from "react-icons/bs";
-import { FaLinkedin } from "react-icons/fa";
-import { motion } from "framer-motion";
-import styles from "./headinglinks.module.scss";
+import React from 'react';
+import { AiFillGithub, AiOutlineInstagram } from 'react-icons/ai';
+import { BsTelegram, BsDiscord } from 'react-icons/bs';
+import { FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import styles from './headinglinks.module.scss';
 
 type MotionLinkProps = {
   href: string;
   icon: React.ReactNode;
   delay: number;
+};
+
+const MotionLink: React.FC<MotionLinkProps> = ({ href, icon, delay }) => {
+  return (
+    <motion.span
+      initial={{ y: -30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay }}
+    >
+      <a href={href} target="_blank" rel="nofollow noreferrer">
+        {icon}
+      </a>
+    </motion.span>
+  );
 };
 
 export const MyLinks = () => {
@@ -42,19 +56,3 @@ export const MyLinks = () => {
     </div>
   );
 };
-
-const MotionLink: React.FC<MotionLinkProps> = ({ href, icon, delay }) => {
-  return (
-    <motion.span
-      initial={{ y: -30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay }}
-    >
-      <a href={href} target="_blank" rel="nofollow noreferrer" >
-        {icon}
-      </a>
-    </motion.span>
-  );
-};
-
-

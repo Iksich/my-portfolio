@@ -1,25 +1,25 @@
-import { useEffect } from "react";
-import styles from "./dotgrid.module.scss";
-import anime from "animejs";
+import { useEffect } from 'react';
+import anime from 'animejs';
+import styles from './dotgrid.module.scss';
 
 export const DotGrid = () => {
   const GRID_WIDTH = 25;
   const GRID_HEIGHT = 20;
 
-  const animateDots = (startIndex: number) => {
+  const animateDots = (startIndex) => {
     anime({
-      targets: ".dot-point",
+      targets: '.dot-point',
       scale: [
-        { value: 1.35, easing: "easeOutSine", duration: 250 },
-        { value: 1, easing: "easeInOutQuad", duration: 500 },
+        { value: 1.35, easing: 'easeOutSine', duration: 250 },
+        { value: 1, easing: 'easeInOutQuad', duration: 500 },
       ],
       translateY: [
-        { value: -15, easing: "easeOutSine", duration: 250 },
-        { value: 1, easing: "easeInOutQuad", duration: 500 },
+        { value: -15, easing: 'easeOutSine', duration: 250 },
+        { value: 1, easing: 'easeInOutQuad', duration: 500 },
       ],
       opacity: [
-        { value: 0.7, easing: "easeOutSine", duration: 250 },
-        { value: 0.35, easing: "easeInOutQuad", duration: 500 },
+        { value: 0.7, easing: 'easeOutSine', duration: 250 },
+        { value: 0.35, easing: 'easeInOutQuad', duration: 500 },
       ],
       delay: anime.stagger(100, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
@@ -28,34 +28,50 @@ export const DotGrid = () => {
     });
   };
 
-  useEffect(() => {
-    animateDots(0); // Start animation from the first dot by default
-  }, []);
+  const handleDotClick = (e) => {
+    const startIndex = parseInt(e.currentTarget.dataset.index || '0', 10);
 
-  const handleDotClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const startIndex = parseInt(e.currentTarget.dataset.index || "0", 10);
     animateDots(startIndex);
-    // Your click handler code here
   };
+
+  const handleDotKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      handleDotClick(e);
+    }
+  };
+
+  useEffect(() => {
+    animateDots(0);
+  }, []);
 
   const dots = [];
 
-  let index = 0;
+  let i = 0;
 
-  for (let i = 0; i < GRID_WIDTH; i++) {
-    for (let j = 0; j < GRID_HEIGHT; j++) {
+  while (i < GRID_WIDTH) {
+    let j = 0;
+
+    while (j < GRID_HEIGHT) {
+      const index = i * GRID_HEIGHT + j;
+
       dots.push(
         <div
           onClick={handleDotClick}
+          onKeyDown={handleDotKeyDown}
           className={styles.dotWrapper}
           data-index={index}
+          role="button"
+          tabIndex={0}
           key={`${i}-${j}`}
         >
           <div className={`${styles.dot} dot-point`} data-index={index} />
-        </div>
+        </div>,
       );
-      index++;
+
+      j += 1;
     }
+
+    i += 1;
   }
 
   return (
@@ -63,7 +79,7 @@ export const DotGrid = () => {
       style={{ gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}
       className={styles.dotGrid}
     >
-      {dots.map((dot) => dot)}
+      {dots}
     </div>
   );
 };

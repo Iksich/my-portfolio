@@ -1,7 +1,7 @@
-import styles from "./stats.module.scss";
-import { AiFillCode } from "react-icons/ai";
-import { MdDevicesOther } from "react-icons/md"
-import { Reveal } from "../../utils/Reveal";
+import { AiFillCode } from 'react-icons/ai';
+import { MdDevicesOther } from 'react-icons/md';
+import styles from './stats.module.scss';
+import { Reveal } from '../../utils/Reveal';
 
 export const Stats = () => {
   return (
@@ -14,13 +14,13 @@ export const Stats = () => {
           </h4>
           <div className={styles.statGrid}>
             <span className="chip">JavaScript</span>
-            <span className="chip">TypeScript</span>            
+            <span className="chip">TypeScript</span>
             <span className="chip">HTML</span>
             <span className="chip">CSS</span>
-            <span className="chip">SCSS</span>            
-            <span className="chip">React</span>            
+            <span className="chip">SCSS</span>
+            <span className="chip">React</span>
             <span className="chip">Redux</span>
-            <span className="chip">NodeJS</span>            
+            <span className="chip">NodeJS</span>
             <span className="chip">MySql</span>
           </div>
         </div>

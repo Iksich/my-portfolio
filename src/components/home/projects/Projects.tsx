@@ -1,30 +1,17 @@
-import { SectionHeader } from "../../utils/SectionHeader";
-import { Project } from "./Project";
-import styles from "./projects.module.scss";
-
-export const Projects = () => {
-  return (
-    <section className="section-wrapper" id="projects">
-      <SectionHeader title="Projects" dir="r" />
-
-      <div className={styles.projects}>
-        {projects.map((project) => {
-          return <Project key={project.title} {...project} />;
-        })}
-      </div>
-    </section>
-  );
-};
+/* eslint-disable max-len */
+import { SectionHeader } from '../../utils/SectionHeader';
+import { Project } from './Project';
+import styles from './projects.module.scss';
 
 const projects = [
   {
-    title: "THE MET",
-    imgSrc: "/project-imgs/the_met.png",
-    code: "https://github.com/mate-academy/layout_miami/pull/1759",
-    projectLink: "https://iksich.github.io/layout_miami/",
-    tech: ["Javascript", "HTML", "SCSS"],
+    title: 'THE MET',
+    imgSrc: '/project-imgs/the_met.png',
+    code: 'https://github.com/mate-academy/layout_miami/pull/1759',
+    projectLink: 'https://iksich.github.io/layout_miami/',
+    tech: ['Javascript', 'HTML', 'SCSS'],
     description:
-      "My first project involved creating a responsive landing page for THE MET, a museum website. My primary focus was on producing clean code and ensuring reusability of style blocks. To achieve this, I employed a tech stack consisting of HTML, SCSS, BEM (Block Element Modifier) methodology for structured styling, and JavaScript for interactive elements.",
+      'My first project involved creating a responsive landing page for THE MET, a museum website. My primary focus was on producing clean code and ensuring reusability of style blocks. To achieve this, I employed a tech stack consisting of HTML, SCSS, BEM (Block Element Modifier) methodology for structured styling, and JavaScript for interactive elements.',
     modalContent: (
       <>
         <p>
@@ -37,19 +24,19 @@ const projects = [
           For interactivity, I leveraged JavaScript to create engaging features such as animated banners, image sliders, and smooth scrolling. These interactive elements enhanced user engagement and made the browsing experience more enjoyable.
         </p>
         <p>
-          Throughout the project, my commitment to clean code practices allowed for efficient performance and ensured that future updates and additions could be implemented with ease. The result is a polished and user-friendly landing page for "THE MET," providing visitors with an exceptional experience regardless of their preferred device.
+          Throughout the project, my commitment to clean code practices allowed for efficient performance and ensured that future updates and additions could be implemented with ease. The result is a polished and user-friendly landing page for &quot;THE MET,&quot; providing visitors with an exceptional experience regardless of their preferred device.
         </p>
       </>
     ),
   },
   {
-    title: "Dynamic list of posts",
-    imgSrc: "/project-imgs/dynamic_list_of_posts.png",
-    code: "https://github.com/mate-academy/react_dynamic-list-of-posts/pull/861/files",
-    projectLink: "https://iksich.github.io/react_dynamic-list-of-posts/",
-    tech: ["TypeScript", "SCSS", "React"],
+    title: 'Dynamic list of posts',
+    imgSrc: '/project-imgs/dynamic_list_of_posts.png',
+    code: 'https://github.com/mate-academy/react_dynamic-list-of-posts/pull/861/files',
+    projectLink: 'https://iksich.github.io/react_dynamic-list-of-posts/',
+    tech: ['TypeScript', 'SCSS', 'React'],
     description:
-      "In my latest project, I took on the challenge of building a dynamic list of posts, showcasing my expertise in front-end development and data handling. The main objective was to create a seamless and engaging user experience by dynamically rendering and managing a list of posts retrieved from an external API.",
+      'In my latest project, I took on the challenge of building a dynamic list of posts, showcasing my expertise in front-end development and data handling. The main objective was to create a seamless and engaging user experience by dynamically rendering and managing a list of posts retrieved from an external API.',
     modalContent: (
       <>
         <p>
@@ -72,13 +59,13 @@ const projects = [
     ),
   },
   {
-    title: "Fetch movies",
-    imgSrc: "/project-imgs/fetch_movies.png",
-    code: "https://github.com/mate-academy/react_movies-list-fetch-movies/pull/975",
-    projectLink: "https://iksich.github.io/react_movies-list-fetch-movies/",
-    tech: ["TypeScript", "SCSS", "React"],
+    title: 'Fetch movies',
+    imgSrc: '/project-imgs/fetch_movies.png',
+    code: 'https://github.com/mate-academy/react_movies-list-fetch-movies/pull/975',
+    projectLink: 'https://iksich.github.io/react_movies-list-fetch-movies/',
+    tech: ['TypeScript', 'SCSS', 'React'],
     description:
-      "In my recent project, I designed and developed the Fetch Movies app, a dynamic application that allows users to search for movies and add them to a personalized movie list. The app utilizes React, TypeScript, and an external movie API to provide a seamless user experience while fetching and displaying movie data in real-time.",
+      'In my recent project, I designed and developed the Fetch Movies app, a dynamic application that allows users to search for movies and add them to a personalized movie list. The app utilizes React, TypeScript, and an external movie API to provide a seamless user experience while fetching and displaying movie data in real-time.',
     modalContent: (
       <>
         <p>
@@ -102,13 +89,13 @@ const projects = [
   },
 
   {
-    title: "Carousel",
-    imgSrc: "/project-imgs/carousel.png",
-    code: "https://github.com/mate-academy/react_carousel/pull/372",
-    projectLink: "https://iksich.github.io/react_carousel/",
-    tech: ["TypeScript", "SCSS", "React"],
+    title: 'Carousel',
+    imgSrc: '/project-imgs/carousel.png',
+    code: 'https://github.com/mate-academy/react_carousel/pull/372',
+    projectLink: 'https://iksich.github.io/react_carousel/',
+    tech: ['TypeScript', 'SCSS', 'React'],
     description:
-        "I designed and developed a dynamic Carousel component using React, enabling users to display and navigate through a collection of images. Users can customize item width, frame size, and scroll step. The component includes smooth animations, responsive navigation, and an optional cyclic scrolling feature for seamless looping.",
+        'I designed and developed a dynamic Carousel component using React, enabling users to display and navigate through a collection of images. Users can customize item width, frame size, and scroll step. The component includes smooth animations, responsive navigation, and an optional cyclic scrolling feature for seamless looping.',
     modalContent: (
       <>
         <p>
@@ -130,15 +117,14 @@ const projects = [
     ),
   },
 
-
   {
-    title: "Portfolio website",
-    imgSrc: "/project-imgs/portfolio.png",
-    code: "https://github.com/Iksich/my-portfolio",
-    projectLink: "https://my-portfolio-iksich.vercel.app/",
-    tech: ["TypeScript", "SCSS", "EmailJs", "Framer-Motion", "React"],
+    title: 'Portfolio website',
+    imgSrc: '/project-imgs/portfolio.png',
+    code: 'https://github.com/Iksich/my-portfolio',
+    projectLink: 'https://my-portfolio-iksich.vercel.app/',
+    tech: ['TypeScript', 'SCSS', 'EmailJs', 'Framer-Motion', 'React'],
     description:
-      "This portfolio website showcases a collection of my projects and skills as a developer. Built using React, TypeScript, and SCSS, it provides an interactive way for recruiters and potential employers to explore my work and expertise.",
+      'This portfolio website showcases a collection of my projects and skills as a developer. Built using React, TypeScript, and SCSS, it provides an interactive way for recruiters and potential employers to explore my work and expertise.',
     modalContent: (
       <>
         <p>
@@ -148,30 +134,30 @@ const projects = [
           The website is built using React to create a dynamic and responsive user interface. TypeScript is used to enhance the development process by providing type safety and improved code readability.
         </p>
         <p>
-          Visitors can explore the various projects I've worked on, view project details, and access GitHub repositories or live demos. Additionally, the website provides information about the programming languages, frameworks, and tools I'm proficient in.
+          Visitors can explore the various projects I&apos;ve worked on, view project details, and access GitHub repositories or live demos. Additionally, the website provides information about the programming languages, frameworks, and tools I&apos;m proficient in.
         </p>
         <p>
-          I'm excited to share my work and connect with others in the tech community through this portfolio website. Thank you for visiting!
+          I&apos;m excited to share my work and connect with others in the tech community through this portfolio website. Thank you for visiting!
         </p>
       </>
     ),
   },
 
   {
-    title: "Todo app",
-    imgSrc: "/project-imgs/todo_app.png",
-    code: "https://github.com/mate-academy/react_todo-app-with-api/pull/342",
-    projectLink: "https://iksich.github.io/react_todo-app-with-api/#/",
-    tech: ["TypeScript", "SCSS", "React"],
+    title: 'Todo app',
+    imgSrc: '/project-imgs/todo_app.png',
+    code: 'https://github.com/mate-academy/react_todo-app-with-api/pull/342',
+    projectLink: 'https://iksich.github.io/react_todo-app-with-api/#/',
+    tech: ['TypeScript', 'SCSS', 'React'],
     description:
-      "For this project, I designed and developed a dynamic Todo application with API integration, allowing users to manage their tasks efficiently. The app is built using React and TypeScript, providing a seamless user experience with error-free data handling.",
+      'For this project, I designed and developed a dynamic Todo application with API integration, allowing users to manage their tasks efficiently. The app is built using React and TypeScript, providing a seamless user experience with error-free data handling.',
     modalContent: (
       <>
         <p>
           The app integrates with an API to perform Create, Read, Update, and Delete (CRUD) operations on Todo items. Users can create new tasks, update their status, modify titles, and delete completed or unwanted tasks.
         </p>
         <p>
-          I implemented asynchronous data fetching from the API using React's useEffect hook, ensuring that the app always displays the latest data.
+          I implemented asynchronous data fetching from the API using React&apos;s useEffect hook, ensuring that the app always displays the latest data.
         </p>
         <p>
           The app is designed to handle various error scenarios gracefully. In case of API call failures or empty titles, appropriate error messages are displayed to the users, ensuring a user-friendly experience.
@@ -181,7 +167,7 @@ const projects = [
         </p>
 
         <p>
-          A convenient "Toggle All" button allows users to toggle the completion status of all Todo items with a single click, streamlining task management.
+          A convenient &quot;Toggle All&quot; button allows users to toggle the completion status of all Todo items with a single click, streamlining task management.
         </p>
 
         <p>
@@ -191,3 +177,17 @@ const projects = [
     ),
   },
 ];
+
+export const Projects = () => {
+  return (
+    <section className="section-wrapper" id="projects">
+      <SectionHeader title="Projects" dir="r" />
+
+      <div className={styles.projects}>
+        {projects.map((project) => {
+          return <Project key={project.title} {...project} />;
+        })}
+      </div>
+    </section>
+  );
+};

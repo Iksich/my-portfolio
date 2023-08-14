@@ -26,15 +26,12 @@
       font-size: 40px;
     }
 
-    @media (max-width:900px) {
+    @media (max-width: 900px) {
       display: block;
     }
 
-    .navbarMobileOpen {
-      display: none;
-    }
-
-    .navbarMobileOpenActive {
+    &.navbarMobileOpen,
+    &.navbarMobileOpenActive {
       display: none;
       padding: 20px;
       position: absolute;
@@ -49,9 +46,13 @@
         flex-direction: column;
       }
 
-      @media (max-width:900px) {
+      @media (max-width: 900px) {
         display: block;
       }
+    }
+
+    &.navbarMobileOpenActive {
+      display: block;
     }
   }
 

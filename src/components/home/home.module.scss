@@ -2,7 +2,14 @@
   display: grid;
   grid-template-columns: 60px 1fr;
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width: 900px) {
     display: block;
   }
+}
+
+.gradient-background {
+  height: 100px;
+  background: linear-gradient(180deg,
+      var(--background),
+      var(--background-dark));
 }

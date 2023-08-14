@@ -1,13 +1,13 @@
-import styles from "./projectmodal.module.scss";
-import { useEffect } from "react";
-import ReactDOM from "react-dom";
-import { motion } from "framer-motion";
-import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
-import { MdClose } from "react-icons/md";
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import { motion } from 'framer-motion';
+import { AiFillGithub, AiOutlineExport } from 'react-icons/ai';
+import { MdClose } from 'react-icons/md';
+import styles from './projectmodal.module.scss';
 
 interface Props {
   isOpen: boolean;
-  setIsOpen: Function;
+  setIsOpen: (isOpen: boolean) => void;
   title: string;
   imgSrc: string;
   code: string;
@@ -27,20 +27,32 @@ export const ProjectModal = ({
   tech,
 }: Props) => {
   useEffect(() => {
-    const body = document.querySelector("body");
+    const body = document.querySelector('body') as HTMLBodyElement | null;
 
-    if (isOpen) {
-      body!.style.overflowY = "hidden";
-    } else {
-      body!.style.overflowY = "scroll";
+    if (body) {
+      body.style.overflowY = isOpen ? 'hidden' : 'scroll';
     }
   }, [isOpen]);
 
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
   const content = (
-    <div className={styles.modal} onClick={() => setIsOpen(false)}>
-      <button className={styles.closeModalBtn}>
+    <div
+      className={styles.modal}
+      onClick={handleCloseModal}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === 'Space') {
+          handleCloseModal();
+        }
+      }}
+      role="button"
+      tabIndex={0}
+    >
+      <div className={styles.closeModalBtn}>
         <MdClose />
-      </button>
+      </div>
 
       <motion.div
         initial={{ y: 100, opacity: 0 }}
@@ -48,28 +60,34 @@ export const ProjectModal = ({
         onClick={(e) => e.stopPropagation()}
         className={styles.modalCard}
       >
-
         <img
           className={styles.modalImage}
           src={imgSrc}
-          alt={`An image of the ${title} project.`}
+          alt={`Project: ${title}`}
         />
         <div className={styles.modalContent}>
           <h4>{title}</h4>
-          <div className={styles.modalTech}>{tech.join(" - ")}</div>
+          <div className={styles.modalTech}>{tech.join(' - ')}</div>
 
           <div className={styles.suppliedContent}>{modalContent}</div>
 
           <div className={styles.modalFooter}>
             <p className={styles.linksText}>
-              Project Links<span>.</span>
+              Project Links
+              <span>.</span>
             </p>
+
             <div className={styles.links}>
-              <a target="_blank" rel="nofollow" href={code}>
-                <AiFillGithub /> source code
+              <a target="_blank" rel="nofollow noreferrer" href={code}>
+                <AiFillGithub />
+                {' '}
+                source code
               </a>
-              <a target="_blank" rel="nofollow" href={projectLink}>
-                <AiOutlineExport /> live project
+
+              <a target="_blank" rel="nofollow noreferrer" href={projectLink}>
+                <AiOutlineExport />
+                {' '}
+                live project
               </a>
             </div>
           </div>
@@ -78,8 +96,9 @@ export const ProjectModal = ({
     </div>
   );
 
-  if (!isOpen) return <></>;
+  if (!isOpen) {
+    return null;
+  }
 
-  // @ts-ignore
-  return ReactDOM.createPortal(content, document.getElementById("root"));
+  return ReactDOM.createPortal(content, document.getElementById('root'));
 };

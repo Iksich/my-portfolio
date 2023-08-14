@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
-import styles from "./sidebar.module.scss";
-import { motion } from "framer-motion";
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import styles from './sidebar.module.scss';
 
 export const SideBar = () => {
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState('');
 
   useEffect(() => {
-    const sections = document.querySelectorAll(".section-wrapper");
+    const sections = document.querySelectorAll('.section-wrapper');
 
     const options = {
       threshold: 0.3,
     };
 
-    const callback = (entries: any) => {
-      entries.forEach((entry: any) => {
+    const callback = (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setSelected(entry.target.id);
         }
@@ -33,7 +33,8 @@ export const SideBar = () => {
       className={styles.sideBar}
     >
       <span className={styles.logo}>
-        И<span>.</span>
+        И
+        <span>.</span>
       </span>
       <motion.a
         initial={{ x: -70 }}
@@ -41,9 +42,9 @@ export const SideBar = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         href="#"
         onClick={() => {
-          setSelected("#");
+          setSelected('#');
         }}
-        className={selected === "Home" ? styles.selected : ""}
+        className={selected === 'Home' ? styles.selected : ''}
       >
         Home
       </motion.a>
@@ -53,9 +54,9 @@ export const SideBar = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         href="#about"
         onClick={() => {
-          setSelected("about");
+          setSelected('about');
         }}
-        className={selected === "about" ? styles.selected : ""}
+        className={selected === 'about' ? styles.selected : ''}
       >
         About
       </motion.a>
@@ -64,8 +65,8 @@ export const SideBar = () => {
         animate={{ x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         href="#projects"
-        onClick={() => setSelected("projects")}
-        className={selected === "projects" ? styles.selected : ""}
+        onClick={() => setSelected('projects')}
+        className={selected === 'projects' ? styles.selected : ''}
       >
         Projects
       </motion.a>
@@ -74,8 +75,8 @@ export const SideBar = () => {
         animate={{ x: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
         href="#contact"
-        onClick={() => setSelected("contact")}
-        className={selected === "contact" ? styles.selected : ""}
+        onClick={() => setSelected('contact')}
+        className={selected === 'contact' ? styles.selected : ''}
       >
         Contact
       </motion.a>

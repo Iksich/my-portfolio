@@ -1,6 +1,6 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export default {
   mode: 'development',
   entry: './src/index.tsx',
   output: {
@@ -22,7 +22,11 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+                '@babel/preset-typescript',
+              ],
             },
           },
         ],
@@ -68,5 +72,3 @@ module.exports = {
     ],
   },
 };
-
-

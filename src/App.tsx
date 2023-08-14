@@ -1,7 +1,6 @@
 import React from 'react';
-import "./styles/globals.css";
-import { Home } from "./components/home/Home"
-
+import './styles/globals.css';
+import { Home } from './components/home/Home';
 
 export const App: React.FC = () => {
   return (
@@ -10,4 +9,3 @@ export const App: React.FC = () => {
     </div>
   );
 };
-

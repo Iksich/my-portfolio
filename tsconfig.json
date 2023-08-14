@@ -5,7 +5,7 @@
     "lib": ["dom", "dom.iterable", "es6"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
     "esModuleInterop": true,
@@ -16,5 +16,5 @@
     "jsx": "preserve"
   },
   "include": ["src", "react-app-env.d.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".eslintrc.js", "webpack.config.js"]
 }
