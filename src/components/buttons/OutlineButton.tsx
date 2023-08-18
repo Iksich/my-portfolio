@@ -8,11 +8,7 @@ interface Props {
 
 export const OutlineButton = ({ children, onClick }: Props) => {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={styles.outlineButton}
-    >
+    <button onClick={onClick} className={styles.outlineButton}>
       {children}
     </button>
   );

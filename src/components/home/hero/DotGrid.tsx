@@ -6,7 +6,7 @@ export const DotGrid = () => {
   const GRID_WIDTH = 25;
   const GRID_HEIGHT = 20;
 
-  const animateDots = (startIndex) => {
+  const animateDots = (startIndex: number) => {
     anime({
       targets: '.dot-point',
       scale: [
@@ -28,16 +28,8 @@ export const DotGrid = () => {
     });
   };
 
-  const handleDotClick = (e) => {
-    const startIndex = parseInt(e.currentTarget.dataset.index || '0', 10);
-
+  const handleDotInteraction = (startIndex: number) => {
     animateDots(startIndex);
-  };
-
-  const handleDotKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      handleDotClick(e);
-    }
   };
 
   useEffect(() => {
@@ -56,8 +48,12 @@ export const DotGrid = () => {
 
       dots.push(
         <div
-          onClick={handleDotClick}
-          onKeyDown={handleDotKeyDown}
+          onClick={() => handleDotInteraction(index)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              handleDotInteraction(index);
+            }
+          }}
           className={styles.dotWrapper}
           data-index={index}
           role="button"
@@ -65,7 +61,7 @@ export const DotGrid = () => {
           key={`${i}-${j}`}
         >
           <div className={`${styles.dot} dot-point`} data-index={index} />
-        </div>,
+        </div>
       );
 
       j += 1;

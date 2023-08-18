@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './sidebar.module.scss';
 
@@ -12,8 +12,8 @@ export const SideBar = () => {
       threshold: 0.3,
     };
 
-    const callback = (entries) => {
-      entries.forEach((entry) => {
+    const callback = (entries: any[]) => {
+      entries.forEach((entry: { isIntersecting: any; target: { id: SetStateAction<string>; }; }) => {
         if (entry.isIntersecting) {
           setSelected(entry.target.id);
         }

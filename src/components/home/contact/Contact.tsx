@@ -1,47 +1,56 @@
-import React, {
-  useState,
-  useRef,
-  ChangeEvent,
-  FormEvent,
-} from 'react';
-import { ToastContainer, toast, ToastOptions } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import emailjs from '@emailjs/browser';
-import { AiFillMail } from 'react-icons/ai';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState, useRef } from 'react';
 import { Reveal } from '../../utils/Reveal';
 import styles from './contact.module.scss';
+import { AiFillMail } from 'react-icons/ai';
+import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { OutlineButton } from '../../buttons/OutlineButton';
 
-export const Contact: React.FC = () => {
-  const [message, setMessage] = useState<string>('');
+export const Contact = () => {
+  const [message, setMessage] = useState('');
   const form = useRef<HTMLFormElement>(null);
 
-  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
+  const serviceID = process.env.REACT_APP_SERVICE_ID || '';
+  const templateID = process.env.REACT_APP_TEMPLATE_ID || '';
+  const publicKey = process.env.REACT_APP_PUBLIC_KEY || '';
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const toastOptions: ToastOptions = {
-      position: 'top-center',
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'dark',
-    };
-
-    try {
-      await emailjs.sendForm('service_8guehy6', 'template_r6u1a4v',
-        form.current!, 'HOVEDFq5g8I7E-j3n');
-      toast.success('Message sent!', toastOptions);
-      setMessage('');
-      form.current!.reset();
-    } catch (error) {
-      toast.error('Something went wrong', toastOptions);
-    }
+    emailjs.sendForm(serviceID, templateID, form.current!, publicKey)
+      .then(
+        (_result) => {
+          toast.success('Message sent!', {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'dark',
+          });
+          setMessage('');
+          form.current!.reset();
+        },
+        (_error) => {
+          toast.error('Something went wrong', {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'dark',
+          });
+        }
+      );
   };
 
-  const handleMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value);
   };
 
@@ -52,33 +61,23 @@ export const Contact: React.FC = () => {
         <div className={styles.contactWrapper}>
           <Reveal width="100%">
             <h4 className={styles.contactTitle}>
-              Contact
-              <span>.</span>
+              Contact<span>.</span>
             </h4>
           </Reveal>
           <Reveal width="100%">
             <p className={styles.contactCopy}>
-              Shoot me an email if you want to connect!
-              You can also find me on
-              {' '}
+              Shoot me an email if you want to connect! You can also find me on{' '}
               <a
                 href="https://www.instagram.com/_ilija_p/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noreferrer"
               >
                 Instagram
-              </a>
-              {' '}
-              or
-              {' '}
-              <a
-                href="https://www.linkedin.com/in/ilija-pejanovic-4a3683243/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </a>{' '}
+              or{' '}
+              <a href="https://www.linkedin.com/in/ilija-pejanovic-4a3683243/" target="_blank" rel="nofollow noreferrer">
                 LinkedIn
-              </a>
-              {' '}
+              </a>{' '}
               if that&apos;s more your speed.
             </p>
           </Reveal>
@@ -91,27 +90,10 @@ export const Contact: React.FC = () => {
             </a>
           </Reveal>
           <Reveal width="100%">
-            <form
-              autoComplete="false"
-              className={styles.contantForm}
-              ref={form}
-              onSubmit={sendEmail}
-            >
+            <form autoComplete="false" className={styles.contantForm} ref={form} onSubmit={sendEmail}>
               <div className={styles.inputBox}>
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  autoComplete="false"
-                  name="to_name"
-                  required
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  autoComplete="false"
-                  name="from_name"
-                  required
-                />
+                <input type="text" placeholder="Full Name" autoComplete="false" name="to_name" required />
+                <input type="email" placeholder="Email Address" autoComplete="false" name="from_name" required />
               </div>
               <textarea
                 placeholder="Your Message"
@@ -121,8 +103,7 @@ export const Contact: React.FC = () => {
                 value={message}
                 onChange={handleMessageChange}
               />
-              <br />
-              <br />
+              <br /><br />
               <OutlineButton>
                 Send Message
               </OutlineButton>
@@ -133,3 +114,4 @@ export const Contact: React.FC = () => {
     </>
   );
 };
+

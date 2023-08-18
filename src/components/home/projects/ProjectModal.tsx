@@ -100,5 +100,6 @@ export const ProjectModal = ({
     return null;
   }
 
-  return ReactDOM.createPortal(content, document.getElementById('root'));
+  return ReactDOM.createPortal(content, document.getElementById('root') as HTMLElement);
+
 };
