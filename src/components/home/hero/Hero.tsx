@@ -16,8 +16,7 @@ const HeroTitle = () => (
 const HeroSubtitle = () => (
   <Reveal>
     <h2 className={styles.subTitle}>
-      I&apos;m a
-      <span>
+      I&apos;m a <span>
         <ReactTypingEffect
           text={['Front-end Developer.', 'Freelancer.']}
           speed={40}
