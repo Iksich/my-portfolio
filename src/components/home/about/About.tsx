@@ -13,12 +13,12 @@ export const About = () => {
             <p className={`${styles.aboutText}`}>
               <span>Hi</span>
               there! My name is Ilija Pejanovic,
-              and I&apos;m a talented and motivated Front-end Developer seeking
-              an opportunity to apply my expertise. Eager to
-              embrace new challenges and expand my knowledge.
-              Experienced in utilizing HTML, Bootstrap, CSS, SCSS,
-              JavaScript, TypeScript, and React in development
-              projects.
+              and I&apos;m an aspiring Front-end Developer with a foundation in HTML,
+              Bootstrap, CSS, SCSS, JavaScript, TypeScript, and React.
+              Eager to apply my skills and learn while working on real-world projects.
+              Committed to staying current with industry trends
+              and delivering high-quality solutions.
+              Ready to contribute to exceptional digital experiences in an entry-level role.
             </p>
           </Reveal>
         </div>
